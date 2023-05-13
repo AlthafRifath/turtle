@@ -1,0 +1,512 @@
+/* Cross-browser compatibility */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid red; */
+}
+
+/* Main styles for the page */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+nav {
+  margin: 0 auto;
+  text-align: center;
+}
+
+header {
+  background-color: #1e1e1e;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/* Navigation styles */
+nav {
+  margin: 0 auto;
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-right: 20px;
+  position: relative;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #6C63FF;
+}
+
+/* Subheader styles */
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+nav ul li:hover > ul {
+  display: flex;
+  flex-direction: column;
+}
+
+nav ul ul li {
+  width: 100%;
+  margin: 0;
+}
+
+nav ul ul li a {
+  font-size: 16px;
+  font-weight: normal;
+  padding: 10px 20px;
+}
+
+nav ul ul li a:hover {
+  background-color: #6C63FF;
+  color: #FFFFFF;
+}
+
+/* Subnav styles */
+.subnav {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.subnav:hover {
+  color: #6C63FF;
+}
+
+.subnav:focus {
+  outline: none;
+}
+
+.subnav i {
+  margin-left: 5px;
+}
+
+.subnav ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.subnav:hover > ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.subnav ul li {
+  width: 100%;
+  margin: 0;
+}
+
+.subnav ul li a {
+  font-size: 16px;
+  font-weight: normal;
+  padding: 10px 20px;
+}
+
+.subnav ul li a:hover {
+  background-color: #6C63FF;
+  color: #FFFFFF;
+}
+
+.subnav1 {
+  background-color: #C4C4C4;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+.subnav2 {
+  background-color: #EFEFEF;
+}
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin-bottom: 10px;
+  }
+
+  .subnav ul {
+    position: static;
+    box-shadow: none;
+  }
+
+  .subnav ul li {
+    width: auto;
+    margin-right: 10px;
+  }
+}
+
+/* Logo styles */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.hero {
+  background-color: #6C63FF;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 240px 160px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.hero button {
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  color: #6C63FF;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+.hero button:hover {
+  background-color: #6C63FF;
+  color: #fff;
+}
+
+@media (max-width: 768px){
+  .featured-hatcheries{
+    flex-direction: column;
+  }
+}
+/* Featured hatcheries section styles */
+.featured-hatcheries {
+  background-color: #f9f9f9;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.featured-hatcheries h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.hatchery {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  overflow: hidden;
+  width: calc(33.33% - 40px);
+  transition: all 0.3s ease;
+}
+
+.hatchery img {
+  display: block;
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.hatchery h3 {
+  font-size: 24px;
+  margin: 20px;
+}
+
+.hatchery p {
+  font-size: 16px;
+  margin: 0 20px 20px;
+}
+
+.hatchery a {
+  background-color: #6C63FF;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  margin: 20px;
+  padding: 10px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.hatchery a:hover {
+  background-color: #fff;
+  color: #6C63FF;
+}
+
+.hatchery:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+/* Turtle findings */
+
+.turtle-header {
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.findings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+/* Style the individual finding */
+.findings div {
+  flex: 1;
+  min-width: 300px;
+  margin-bottom: 2rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-out;
+}
+
+/* Style the finding heading */
+.findings div h3 {
+  font-size: 24px;
+  text-align: center;
+  color: #444;
+  margin: 1.5rem;
+}
+
+/* Style the finding image */
+.findings div img {
+  width: 100%;
+  height: 425px;
+  object-fit: cover;
+  border-radius: 1rem 1rem 0 0;
+}
+
+/* Style the finding content */
+.findings div p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  padding: 1.5rem;
+}
+
+/* Add hover effect to findings */
+.findings div:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+/* image galary */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.gallery-item {
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Newsletter */
+.newsletter {
+  background-color: #f8f8f8;
+  padding: 40px;
+  text-align: center;
+}
+
+.newsletter h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.newsletter form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.newsletter label {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #666666;
+}
+
+.newsletter input[type="email"] {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333333;
+}
+
+.newsletter button[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #6C63FF;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.newsletter button[type="submit"]:hover {
+  background-color: #6C63FF;
+}
+
+/* Footer 1*/
+.footer1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+.footer1 ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer1 ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer1 ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer1 img {
+  max-height: 50px;
+}
+
+.footer1 .footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.footer1 .footer-right ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer1 .footer-right ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer1 .footer-right ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.footer1 button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.footer1 button:hover {
+  background-color: #666;
+}
+
+/* Footer 2 */
+.footer2 {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}
+
