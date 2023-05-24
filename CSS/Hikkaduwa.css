@@ -153,6 +153,8 @@ nav ul ul li a:hover {
 
 .subnav2 {
   background-color: #EFEFEF;
+  font-size: 16px;
+  padding: 10px 20px;
 }
 
 @media screen and (max-width: 768px) {
@@ -186,3 +188,142 @@ nav ul ul li a:hover {
 .logo img {
   width: 100%;
 }
+
+/* Hatchery Info */
+.hatchery-info {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.hatchery-info h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hatchery-info p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.hatchery-info img {
+  display: block;
+  width: auto;
+  height: 600px;
+  margin-bottom: 0 auto 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.3s ease;
+}
+
+.hatchery-info img:hover {
+  transform: scale(1.05);
+}
+
+.visit-info {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.visit-info h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.visit-info ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.visit-info ul li {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.visit-info p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Footer 1*/
+.footer1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+.footer1 ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer1 ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer1 ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer1 img {
+  max-height: 50px;
+}
+
+.footer1 .footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.footer1 .footer-right ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer1 .footer-right ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer1 .footer-right ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.footer1 button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.footer1 button:hover {
+  background-color: #666;
+}
+
+/* Footer 2 */
+.footer2 {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}
+

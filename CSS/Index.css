@@ -152,7 +152,9 @@ nav ul ul li a:hover {
 }
 
 .subnav2 {
-  background-color: #EFEFEF;
+  background-color: #C4C4C4;
+  font-size: 16px;
+  padding: 10px 20px;
 }
 
 @media screen and (max-width: 768px) {
@@ -265,11 +267,13 @@ nav ul ul li a:hover {
 .hatchery h3 {
   font-size: 24px;
   margin: 20px;
+  text-align: center;
 }
 
 .hatchery p {
   font-size: 16px;
   margin: 0 20px 20px;
+  text-align: center;
 }
 
 .hatchery a {
@@ -345,6 +349,7 @@ nav ul ul li a:hover {
   font-size: 1.2rem;
   line-height: 1.5;
   padding: 1.5rem;
+  text-align: center;
 }
 
 /* Add hover effect to findings */

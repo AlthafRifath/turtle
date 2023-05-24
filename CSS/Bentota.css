@@ -186,3 +186,54 @@ nav ul ul li a:hover {
 .logo img {
   width: 100%;
 }
+
+/* Main styles */
+main {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+}
+
+.hatchery-info h1 {
+  color: #6C63FF;
+}
+
+.hatchery-info img {
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.hatchery-info img:hover {
+  transform: scale(1.05);
+}
+
+.hatchery-info h2 {
+  color: #6C63FF;
+}
+
+.hatchery-info ul li {
+  position: relative;
+}
+
+.hatchery-info ul li::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -20px;
+  width: 8px;
+  height: 8px;
+  background-color: #6C63FF;
+  border-radius: 50%;
+}
+
+.hatchery-info ul li::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: -16px;
+  width: 2px;
+  height: calc(100% - 24px);
+  background-color: #6C63FF;
+}

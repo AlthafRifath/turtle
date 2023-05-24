@@ -151,7 +151,9 @@ nav ul ul li a:hover {
 }
   
 .subnav2 {
-  background-color: #EFEFEF;
+  background-color: #C4C4C4;
+  font-size: 16px;
+  padding: 10px 20px;
 }
   
 @media screen and (max-width: 768px) {
@@ -243,6 +245,8 @@ nav ul ul li a:hover {
   list-style: none;
   margin: 0;
   padding: 0;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .turtle-categories li {
@@ -263,6 +267,7 @@ nav ul ul li a:hover {
 .turtle-categories li p {
   font-size: 16px;
   margin: 0 20px 20px;
+  text-align: center;
 }
 
 .turtle-categories img {
@@ -315,7 +320,7 @@ tr:nth-child(even) {
 
 td img {
   display: block;
-  height: 200px;
+  height: 100px;
   object-fit: cover;
   width: 100%;
 }
