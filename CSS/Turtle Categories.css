@@ -231,6 +231,7 @@ nav ul ul li a:hover {
   background-color: #f9f9f9;
   padding: 60px 20px;
   text-align: center;
+  font-size: 1.2rem;
 }
 
 .turtle-categories h1 {
@@ -303,6 +304,7 @@ th, td {
   background-color: #202020;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   animation: table-cell-fade-in 0.5s ease-in-out;
+  font-size: 1.2rem;
 }
 
 th {

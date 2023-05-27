@@ -201,6 +201,7 @@ main {
 .threats-info h1 {
   font-size: 36px;
   margin-bottom: 20px;
+  color: #6C63FF;
 }
 
 .threats-info p {
@@ -220,14 +221,31 @@ main {
   line-height: 1.5;
 }
 
+.threats-info img {
+  display: block;
+  width: auto;
+  height: 600px;
+  margin-bottom: 0 auto 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.3s ease;
+}
+
+.threats-info img:hover {
+  transform: scale(1.05);
+}
+
 .conservation-efforts {
   margin-top: 60px;
   text-align: center;
 }
 
-.conservation-efforts h2 {
-  font-size: 24px;
+.conservation-efforts h1 {
+  font-size: 36px;
   margin-bottom: 20px;
+  color: #6C63FF;
 }
 
 .conservation-efforts p {
@@ -244,6 +262,22 @@ main {
 .conservation-efforts ul li {
   font-size: 18px;
   line-height: 1.5;
+}
+
+.conservation-efforts img {
+  display: block;
+  width: auto;
+  height: 600px;
+  margin-bottom: 0 auto 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.3s ease;
+}
+
+.conservation-efforts img:hover {
+  transform: scale(1.05);
 }
 
 /* Footer 1*/

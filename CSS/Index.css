@@ -229,8 +229,11 @@ nav ul ul li a:hover {
 @media (max-width: 768px){
   .featured-hatcheries{
     flex-direction: column;
+    align-items: flex-start;
+    width: auto;
   }
 }
+
 /* Featured hatcheries section styles */
 .featured-hatcheries {
   background-color: #f9f9f9;
