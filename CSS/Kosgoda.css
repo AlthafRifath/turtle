@@ -157,26 +157,6 @@ nav ul ul li a:hover {
   padding: 10px 20px;
 }
 
-@media screen and (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-  }
-
-  nav ul li {
-    margin-bottom: 10px;
-  }
-
-  .subnav ul {
-    position: static;
-    box-shadow: none;
-  }
-
-  .subnav ul li {
-    width: auto;
-    margin-right: 10px;
-  }
-}
-
 /* Logo styles */
 .logo {
   display: flex;
@@ -347,4 +327,56 @@ main {
   text-align: center;
   padding: 10px;
   font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin-bottom: 10px;
+  }
+
+  .subnav ul {
+    position: static;
+    box-shadow: none;
+  }
+
+  .subnav ul li {
+    width: auto;
+    margin-right: 10px;
+  }
+
+  .hatchery-info h1 {
+    font-size: 26px;
+  }
+
+  .hatchery-info p {
+    font-size: 16px;
+  }
+
+  .hatchery-info h2 {
+    font-size: 22px;
+  }
+
+  .kosgoda-map {
+    width: 100%;
+  }
+
+  .footer1 {
+    flex-direction: column;
+  }
+
+  .footer1 ul {
+    margin-bottom: 25px;
+  }
+
+  .footer1 form {
+    margin-bottom: 25px;
+  }
 }

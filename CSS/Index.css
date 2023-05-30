@@ -157,26 +157,6 @@ nav ul ul li a:hover {
   padding: 10px 20px;
 }
 
-@media screen and (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-  }
-
-  nav ul li {
-    margin-bottom: 10px;
-  }
-
-  .subnav ul {
-    position: static;
-    box-shadow: none;
-  }
-
-  .subnav ul li {
-    width: auto;
-    margin-right: 10px;
-  }
-}
-
 /* Logo styles */
 .logo {
   display: flex;
@@ -397,6 +377,7 @@ nav ul ul li a:hover {
   background-color: #f4f4f4;
   padding: 20px;
   margin-top: 40px;
+  flex-wrap: wrap;
 }
 
 .footer1 ul {
@@ -475,4 +456,67 @@ nav ul ul li a:hover {
   text-align: center;
   padding: 10px;
   font-size: 14px;
+}
+
+/* Responsive media queries */
+
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin-bottom: 10px;
+  }
+
+  .subnav ul {
+    position: static;
+    box-shadow: none;
+  }
+
+  .subnav ul li {
+    width: auto;
+    margin-right: 10px;
+  }
+
+  .hatchery {
+    width: 100%;
+  }
+
+  .hatchery {
+    margin: 20px 0px;
+  }
+
+  .hero h1 {
+    align-content: justify;
+    font-size: 26px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .hero {
+    padding: 1rem 1rem;
+  }
+
+  .hero button {
+    font-size: 16px;
+  }
+
+  .footer1 {
+    flex-direction: column;
+  }
+
+  .footer1 ul {
+    margin-bottom: 25px;
+  }
+
+  .footer1 form {
+    margin-bottom: 25px;
+  }
+
 }
