@@ -169,7 +169,7 @@ nav ul ul li a:hover {
   width: 100%;
 }
 
-.hero {
+.super-head {
   background-color: #6C63FF;
   color: #fff;
   display: flex;
@@ -180,17 +180,17 @@ nav ul ul li a:hover {
   text-align: center;
 }
 
-.hero h1 {
+.super-head h1 {
   font-size: 48px;
   margin-bottom: 20px;
 }
 
-.hero p {
+.super-head p {
   font-size: 24px;
   margin-bottom: 40px;
 }
 
-.hero button {
+.super-head button {
   background-color: #fff;
   border: none;
   border-radius: 5px;
@@ -201,7 +201,7 @@ nav ul ul li a:hover {
   transition: all 0.3s ease;
 }
 
-.hero button:hover {
+.super-head button:hover {
   background-color: #6C63FF;
   color: #fff;
 }
@@ -490,20 +490,20 @@ nav ul ul li a:hover {
     margin: 20px 0px;
   }
 
-  .hero h1 {
+  .super-head h1 {
     align-content: justify;
     font-size: 26px;
   }
 
-  .hero p {
+  .super-head p {
     font-size: 18px;
   }
 
-  .hero {
+  .super-head {
     padding: 1rem 1rem;
   }
 
-  .hero button {
+  .super-head button {
     font-size: 16px;
   }
 
