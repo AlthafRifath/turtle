@@ -7,16 +7,31 @@
     <link rel="stylesheet" href="">
     <link rel="icon" href="Images/Favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="CSS/Tickets.css">
-    <script src="javaScript/Tickets.js"></script>
+    <script src="javaScript/Tickets.js" defer></script>
     <script src="https://unpkg.com/alpinejs" defer></script>
 </head>
-<body>
-    <main>
-        <section class="super-head">
-            <h1>Buy Tickets</h1>
-            <p>Buy your tickets from our website today and explore more of our offerings</p>
-        </section>
+<body x-data="{currentStep: 'tickets'}">
 
+    <section class="super-head">
+        <h1>Buy Tickets</h1>
+        <p>Buy your tickets from our website today and explore more of our offerings</p>
+    </section>
+
+    <div x-data="{steps: ['Tickets', 'Details', 'Confirmation', 'Payment']}">
+        <header>
+            <ul>
+                <template x-for="(step, index) in steps" x-key="index">
+                    <li>
+                        <span x-text="step"></span>
+                        <span x-show="currentStep == step"> (step)</span>
+                    </li>
+                </template>
+            </ul>
+        </header>
+    </div>
+
+    <!--Ticket Step-->
+    <div class="main" x-show="currentStep === 'tickets'">
         <div class="dates-serction">
             <h2>Dates</h2>
             <p>Select a Date from the Calander</p>
@@ -94,6 +109,28 @@
                 </li>
             </ul>
         </div>
-    </main>
+        <button x-on:click="currentStep = 'details'">Continue with Purchase</button>
+    </div>
+
+    <!--Details Step-->
+    <div class="main" x-show="currentStep === 'details'">
+        <h2>Details</h2>
+        <button x-on:click="currentStep = 'tickets'">Previous</button>
+        <button x-on:click="currentStep = 'confirmation'">Next</button>
+    </div>
+
+    <!--Confirmation Step-->
+    <div class="main" x-show="currentStep === 'confirmation'">
+        <h2>Confirmation</h2>
+        <button x-on:click="currentStep = 'details'">Previous</button>
+        <button x-on:click="currentStep = 'payment'">Next</button>
+    </div>
+
+    <!--Payment Step-->
+    <div class="main" x-show="currentStep === 'payment'">
+        <h2>Payment</h2>
+        <button x-on:click="currentStep = 'confirmation'">Previous</button>
+        <button x-on:click="currentStep = 'tickets'">Next</button>
+    </div>
 </body>
 </html>

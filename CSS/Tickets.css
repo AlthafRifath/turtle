@@ -32,7 +32,7 @@ body {
   margin-bottom: 40px;
 }
 
-main {
+.main {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
