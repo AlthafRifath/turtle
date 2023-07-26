@@ -68,7 +68,7 @@
         <div class="duration-section">
             <h2>Duration</h2>
             <p>Select the duration of your visit:</p>
-            <select name="timeSlot" id="timeSlot">
+            <select name="timeSlot" id="timeSlot" multiple>
                 <option value="7:00-8:00">7:00 am - 8.00 am</option>
                 <option value="8:00-9:00">8:00 am - 9:00 am</option>
                 <option value="9:00-10:00">9:00 am - 10:00 am</option>
@@ -108,6 +108,34 @@
                     <b>Charge per one Peak hour for SL Child - 3 USD</b>
                 </li>
             </ul>
+        </div>
+        <div class="summary-table">
+            <table>
+                <tr>
+                    <td>Date</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Time</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Duration</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="tickets-cell">Tickets</td>
+                    <td class="charges-cell">Charges</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Total Payable</td>
+                    <td></td>
+                </tr>
+            </table>
         </div>
         <button x-on:click="currentStep = 'details'">Continue with Purchase</button>
     </div>
