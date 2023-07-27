@@ -52,11 +52,11 @@
                 </tr>
                 <tr>
                     <td>Foreigner Adult</td>
-                    <td><input type="number" name="foreignerAdultTickets" id="foreignerAdultTickets"></td>
+                    <td><input type="number" name="foreignerAdultTickets" id="foreignerAdultTickets" min="0"></td>
                 </tr>
                 <tr>
                     <td>Foreigner Child</td>
-                    <td><input type="number" name="foreignerChildTickets" id="foreignerChildTickets"></td>
+                    <td><input type="number" name="foreignerChildTickets" id="foreignerChildTickets" min="0"></td>
                 </tr>
                 <tr>
                     <td>Infant</td>
@@ -68,7 +68,7 @@
         <div class="duration-section">
             <h2>Duration</h2>
             <p>Select the duration of your visit:</p>
-            <select name="timeSlot" id="timeSlot" multiple>
+            <select name="timeSlot" id="timeSlot">
                 <option value="7:00-8:00">7:00 am - 8.00 am</option>
                 <option value="8:00-9:00">8:00 am - 9:00 am</option>
                 <option value="9:00-10:00">9:00 am - 10:00 am</option>
@@ -143,6 +143,47 @@
     <!--Details Step-->
     <div class="main" x-show="currentStep === 'details'">
         <h2>Details</h2>
+        <div class="summary-table">
+            <table>
+                <tr>
+                    <td>Date</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Time</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Duration</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="tickets-cell">Tickets</td>
+                    <td class="charges-cell">Charges</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Total Payable</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form">
+            <h2>Enter Your Details</h2>
+            <form>
+                <label for="fullName"><b>Full Name</b></label>
+                <input type="text" name="firstName" id="fulltName" placeholder="Enter your Full Name" required>
+                <label for="phone"><b>Mobile Number</b></label>
+                <input type="tel" name="phone" id="phone" placeholder="Enter your Phone Number" required>
+                <label for="email"><b>Email</b></label>
+                <input type="email" name="email" id="email" placeholder="Enter your Email" required>
+                <label for="confirmEmail"><b>Confirm Email</b></label>
+                <input type="email" name="confirmEmail" id="confirmEmail" placeholder="Confirm your Email" required>
+            </form>
+        </div>
         <button x-on:click="currentStep = 'tickets'">Previous</button>
         <button x-on:click="currentStep = 'confirmation'">Next</button>
     </div>
