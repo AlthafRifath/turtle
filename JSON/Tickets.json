@@ -1,0 +1,135 @@
+{
+  "date": "",
+  "guests": [
+    {
+      "slAdult": null,
+      "slChild": null,
+      "foreignerAdult": null,
+      "foreignerChild": null,
+      "infant": null
+    }
+  ],
+  "durations": [
+    {
+      "duration": "Normal",
+      "start": "7.00 AM",
+      "end": "8.00 AM",
+      "charges": {
+        "foreignerAdult": 10,
+        "foreignerChild": 5,
+        "slAdult": 4,
+        "slChild": 2
+      }
+    },
+    {
+      "duration": "Normal",
+      "start": "8.00 AM",
+      "end": "9.00 AM",
+      "charges": {
+        "foreignerAdult": 10,
+        "foreignerChild": 5,
+        "slAdult": 4,
+        "slChild": 2
+      }
+    },
+    {
+      "duration": "Normal",
+      "start": "9.00 AM",
+      "end": "10.00 AM",
+      "charges": {
+        "foreignerAdult": 10,
+        "foreignerChild": 5,
+        "slAdult": 4,
+        "slChild": 2
+      }
+    },
+    {
+      "duration": "Peak",
+      "start": "10.00 AM",
+      "end": "11.00 AM",
+      "charges": {
+        "foreignerAdult": 13,
+        "foreignerChild": 8,
+        "slAdult": 6,
+        "slChild": 3
+      }
+    },
+    {
+      "duration": "Normal",
+      "start": "11.00 AM",
+      "end": "12.00 PM",
+      "charges": {
+        "foreignerAdult": 10,
+        "foreignerChild": 5,
+        "slAdult": 4,
+        "slChild": 2
+      }
+    },
+    {
+      "duration": "Normal",
+      "start": "12.00 PM",
+      "end": "1.00 PM",
+      "charges": {
+        "foreignerAdult": 10,
+        "foreignerChild": 5,
+        "slAdult": 4,
+        "slChild": 2
+      }
+    },
+    {
+      "duration": "Normal",
+      "start": "1.00 PM",
+      "end": "2.00 PM",
+      "charges": {
+        "foreignerAdult": 10,
+        "foreignerChild": 5,
+        "slAdult": 4,
+        "slChild": 2
+      }
+    },
+    {
+      "duration": "Normal",
+      "start": "2.00 PM",
+      "end": "3.00 PM",
+      "charges": {
+        "foreignerAdult": 10,
+        "foreignerChild": 5,
+        "slAdult": 4,
+        "slChild": 2
+      }
+    },
+    {
+      "duration": "Normal",
+      "start": "3.00 PM",
+      "end": "4.00 PM",
+      "charges": {
+        "foreignerAdult": 10,
+        "foreignerChild": 5,
+        "slAdult": 4,
+        "slChild": 2
+      }
+    },
+    {
+      "duration": "Normal",
+      "start": "4.00 PM",
+      "end": "5.00 PM",
+      "charges": {
+        "foreignerAdult": 10,
+        "foreignerChild": 5,
+        "slAdult": 4,
+        "slChild": 2
+      }
+    },
+    {
+      "duration": "Peak",
+      "start": "5.00 PM",
+      "end": "6.00 PM",
+      "charges": {
+        "foreignerAdult": 13,
+        "foreignerChild": 8,
+        "slAdult": 6,
+        "slChild": 3
+      }
+    }
+  ]
+}
