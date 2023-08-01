@@ -12,28 +12,28 @@
     <script src="javaScript/Details.js"></script>
     <script src="https://unpkg.com/alpinejs" defer></script>
 </head>
-<body x-data="{currentStep: 'details'}">
+<body>
     
-    <section class="super-head">
+    <section>
         <h1>Details</h1>
         <p>Enter your details to proceed with the payment</p>
     </section>
 
-    <div x-data="{steps: ['Tickets', 'Details', 'Confirmation', 'Payment']}">
+    <!-- <div x-data="{steps: ['Tickets', 'Details', 'Confirmation', 'Payment']}">
         <header>
             <ul>
                 <template x-for="(step, index) in steps" x-key="index">
                     <li>
                         <span x-text="step"></span>
-                        <span x-show="currentStep == step"> (step)</span>
+                        <span x-show="currentStep == step"> (step)</span>   //This was used make a SPA (Single Page Application)
                     </li>
                 </template>
             </ul>
         </header>
-    </div>
+    </div> -->
 
     <!--Details Step-->
-    <div class="main" x-show="currentStep === 'details'">
+    <div class="main">
         <h2>Details</h2>
         <div class="summary-table">
             <table>

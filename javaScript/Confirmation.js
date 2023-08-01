@@ -1,7 +1,7 @@
 console.info("Confirmation Page Loaded");
 
 document.addEventListener("alpine:init", () => {
-    Alpine.javaScript('confirmation', {
+    Alpine.data('confirmation', {
         init() {
             console.log("Page Loaded");
         },

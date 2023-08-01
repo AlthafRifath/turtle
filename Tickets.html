@@ -12,28 +12,28 @@
     <script src="javaScript/Details.js"></script>
     <script src="https://unpkg.com/alpinejs" defer></script>
 </head>
-<body x-data="{currentStep: 'tickets'}">
+<bodys>
 
     <section class="super-head">
         <h1>Buy Tickets</h1>
         <p>Buy your tickets from our website today and explore more of our offerings</p>
     </section>
 
-    <div x-data="{steps: ['Tickets', 'Details', 'Confirmation', 'Payment']}">
+    <!-- <div x-data="{steps: ['Tickets', 'Details', 'Confirmation', 'Payment']}">
         <header>
             <ul>
                 <template x-for="(step, index) in steps" x-key="index">
                     <li>
                         <span x-text="step"></span>
-                        <span x-show="currentStep == step"> (step)</span>
+                        <span x-show="currentStep == step"> (step)</span>  //This was used make a SPA (Single Page Application)
                     </li>
                 </template>
             </ul>
         </header>
-    </div>
+    </div> -->
 
     <!--Ticket Step-->
-    <div class="main" x-show="currentStep === 'tickets'">
+    <div class="main">
         <div class="dates-serction">
             <h2>Dates</h2>
             <p>Select a Date from the Calander</p>
@@ -139,7 +139,7 @@
                 </tr>
             </table>
         </div>
-        <button x-on:click="currentStep = 'details'">Continue with Purchase</button>
+        <button x-on:click="detailsPage(button)">Continue with Purchase</button>
     </div>
 
 </body>

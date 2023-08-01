@@ -1,7 +1,7 @@
 console.info("Details Page Loaded");
 
 document.addEventListener("alpine:init", () => {
-    Alpine.javaScript('details', {
+    Alpine.data('details', {
         init() {
             console.log("Page Loaded");
         },

@@ -1,7 +1,7 @@
 console.info("Payment Page Loaded");
 
 document.addEventListener("alpine:init", () => {
-    Alpine.javaScript('payment', {
+    Alpine.data('payment', {
         init() {
             console.log("Page Loaded");
         },

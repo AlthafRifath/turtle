@@ -1,9 +1,10 @@
 console.info("Ticket Page Loaded");
 
 document.addEventListener("alpine:init", () => {
-    Alpine.javaScript('tickets', {
-        init() {
-            console.log("Page Loaded");
-        },
+    Alpine.data('tickets', {
+        gotoDetailsPage() {
+            localStorage.setItem("tickets", JSON.stringify(this.ticket));
+            window.location.href = "Details.html";
+        }
     });
 });
