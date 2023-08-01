@@ -12,7 +12,7 @@
     <script src="javaScript/Details.js"></script>
     <script src="https://unpkg.com/alpinejs" defer></script>
 </head>
-<bodys>
+<body>
 
     <section class="super-head">
         <h1>Buy Tickets</h1>
@@ -33,11 +33,11 @@
     </div> -->
 
     <!--Ticket Step-->
-    <div class="main">
+    <div class="main" x-data="tickets">
         <div class="dates-serction">
             <h2>Dates</h2>
             <p>Select a Date from the Calander</p>
-            <input type="date" name="selectedDate" id="selectedDate">
+            <input type="date" name="selectedDate" id="selectedDate" x-model="selectedDate">
         </div>
 
         <div class="guest-section">
@@ -46,19 +46,19 @@
             <table>
                 <tr>
                     <td>SL Adult</td>
-                    <td><input type="number" id="slAdultTickets" name="slAdultTickets" min="0"></td>
+                    <td><input type="number" id="slAdultTickets" name="slAdultTickets" min="0" x-model="slAdultTickets"></td>
                 </tr>
                 <tr>
                     <td>SL Child</td>
-                    <td><input type="number" name="slChildTickets" id="slChildTickets" min="0"></td>
+                    <td><input type="number" name="slChildTickets" id="slChildTickets" min="0" x-model="slChildTickets"></td>
                 </tr>
                 <tr>
                     <td>Foreigner Adult</td>
-                    <td><input type="number" name="foreignerAdultTickets" id="foreignerAdultTickets" min="0"></td>
+                    <td><input type="number" name="foreignerAdultTickets" id="foreignerAdultTickets" min="0" x-model="foreignerAdultTickets"></td>
                 </tr>
                 <tr>
                     <td>Foreigner Child</td>
-                    <td><input type="number" name="foreignerChildTickets" id="foreignerChildTickets" min="0"></td>
+                    <td><input type="number" name="foreignerChildTickets" id="foreignerChildTickets" min="0" x-model="foreignerChildTickets"></td>
                 </tr>
                 <tr>
                     <td>Infant</td>
@@ -70,7 +70,7 @@
         <div class="duration-section">
             <h2>Duration</h2>
             <p>Select the duration of your visit:</p>
-            <select name="timeSlot" id="timeSlot">
+            <select name="timeSlot" id="timeSlot" x-model="selectedTimeSlot">
                 <option value="7:00-8:00">7:00 am - 8.00 am</option>
                 <option value="8:00-9:00">8:00 am - 9:00 am</option>
                 <option value="9:00-10:00">9:00 am - 10:00 am</option>
@@ -139,7 +139,7 @@
                 </tr>
             </table>
         </div>
-        <button x-on:click="detailsPage(button)">Continue with Purchase</button>
+        <button x-on:click="gotoDetailsPage">Continue with Purchase</button>
     </div>
 
 </body>
