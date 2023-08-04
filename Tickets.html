@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,9 @@
     <script src="javaScript/Confirmation.js"></script>
     <script src="javaScript/Details.js"></script>
     <script src="https://unpkg.com/alpinejs" defer></script>
+    <script src="javaScript/Router.js"></script>
 </head>
+
 <body>
 
     <section class="super-head">
@@ -19,21 +22,29 @@
         <p>Buy your tickets from our website today and explore more of our offerings</p>
     </section>
 
-    <!-- <div x-data="{steps: ['Tickets', 'Details', 'Confirmation', 'Payment']}">
-        <header>
-            <ul>
-                <template x-for="(step, index) in steps" x-key="index">
-                    <li>
-                        <span x-text="step"></span>
-                        <span x-show="currentStep == step"> (step)</span>  //This was used make a SPA (Single Page Application)
-                    </li>
-                </template>
-            </ul>
-        </header>
-    </div> -->
-
     <!--Ticket Step-->
-    <div class="main" x-data="tickets">
+    <div class="main" x-data="{
+        selectedTimeSlot: '',
+        selectedDate: '',
+        slAdultTickets: 0,
+        slChildTickets: 0,
+        foreignerAdultTickets: 0,
+        foreignerChildTickets: 0,
+        
+        gotoDetailsPage() {
+            const inputData = {
+                selectedTimeSlot: this.selectedTimeSlot,
+                selectedDate: this.selectedDate,
+                slAdultTickets: this.slAdultTickets,
+                slChildTickets: this.slChildTickets,
+                foreignerAdultTickets: this.foreignerAdultTickets,
+                foreignerChildTickets: this.foreignerChildTickets,
+            };
+            localStorage.setItem('ticketsData', JSON.stringify(inputData));
+            window.location.href = 'Details.html';
+        }
+        
+    }">
         <div class="dates-serction">
             <h2>Dates</h2>
             <p>Select a Date from the Calander</p>
@@ -46,19 +57,23 @@
             <table>
                 <tr>
                     <td>SL Adult</td>
-                    <td><input type="number" id="slAdultTickets" name="slAdultTickets" min="0" x-model="slAdultTickets"></td>
+                    <td><input type="number" id="slAdultTickets" name="slAdultTickets" min="0" x-model="slAdultTickets">
+                    </td>
                 </tr>
                 <tr>
                     <td>SL Child</td>
-                    <td><input type="number" name="slChildTickets" id="slChildTickets" min="0" x-model="slChildTickets"></td>
+                    <td><input type="number" name="slChildTickets" id="slChildTickets" min="0" x-model="slChildTickets">
+                    </td>
                 </tr>
                 <tr>
                     <td>Foreigner Adult</td>
-                    <td><input type="number" name="foreignerAdultTickets" id="foreignerAdultTickets" min="0" x-model="foreignerAdultTickets"></td>
+                    <td><input type="number" name="foreignerAdultTickets" id="foreignerAdultTickets" min="0"
+                            x-model="foreignerAdultTickets"></td>
                 </tr>
                 <tr>
                     <td>Foreigner Child</td>
-                    <td><input type="number" name="foreignerChildTickets" id="foreignerChildTickets" min="0" x-model="foreignerChildTickets"></td>
+                    <td><input type="number" name="foreignerChildTickets" id="foreignerChildTickets" min="0"
+                            x-model="foreignerChildTickets"></td>
                 </tr>
                 <tr>
                     <td>Infant</td>
@@ -70,7 +85,7 @@
         <div class="duration-section">
             <h2>Duration</h2>
             <p>Select the duration of your visit:</p>
-            <select name="timeSlot" id="timeSlot" x-model="selectedTimeSlot">
+            <!-- <select name="timeSlot" id="timeSlot" x-model="selectedTimeSlot">
                 <option value="7:00-8:00">7:00 am - 8.00 am</option>
                 <option value="8:00-9:00">8:00 am - 9:00 am</option>
                 <option value="9:00-10:00">9:00 am - 10:00 am</option>
@@ -82,6 +97,9 @@
                 <option value="3:00-4:00">3:00 pm - 4:00 pm</option>
                 <option value="4:00-5:00">4:00 pm - 5:00 pm</option>
                 <option value="5:00-6:00">5:00 pm - 6:00 pm (Peak)</option>
+            </select> -->
+            <select name="timeSlot" id="timeSlot" x-model="selectedTimeSlot">
+
             </select>
             <h2>Visitors will be charged based on 1 hour based time slots</h2>
             <ul>
@@ -139,8 +157,10 @@
                 </tr>
             </table>
         </div>
+        <button x-on:click="$store.router.goto('Hello World')">Continue with Purchase</button>
         <button x-on:click="gotoDetailsPage">Continue with Purchase</button>
     </div>
 
 </body>
+
 </html>

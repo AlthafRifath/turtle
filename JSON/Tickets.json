@@ -1,14 +1,4 @@
 {
-  "date": "",
-  "guests": [
-    {
-      "slAdult": null,
-      "slChild": null,
-      "foreignerAdult": null,
-      "foreignerChild": null,
-      "infant": null
-    }
-  ],
   "durations": [
     {
       "duration": "Normal",
