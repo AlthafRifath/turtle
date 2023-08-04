@@ -45,25 +45,25 @@
       }
     },
     {
-      "duration": "Normal",
+      "duration": "Peak",
       "start": "11.00 AM",
       "end": "12.00 PM",
       "charges": {
-        "foreignerAdult": 10,
-        "foreignerChild": 5,
-        "slAdult": 4,
-        "slChild": 2
+        "foreignerAdult": 13,
+        "foreignerChild": 8,
+        "slAdult": 6,
+        "slChild": 3
       }
     },
     {
-      "duration": "Normal",
+      "duration": "Peak",
       "start": "12.00 PM",
       "end": "1.00 PM",
       "charges": {
-        "foreignerAdult": 10,
-        "foreignerChild": 5,
-        "slAdult": 4,
-        "slChild": 2
+        "foreignerAdult": 13,
+        "foreignerChild": 8,
+        "slAdult": 6,
+        "slChild": 3
       }
     },
     {
@@ -89,25 +89,25 @@
       }
     },
     {
-      "duration": "Normal",
+      "duration": "Peak",
       "start": "3.00 PM",
       "end": "4.00 PM",
       "charges": {
-        "foreignerAdult": 10,
-        "foreignerChild": 5,
-        "slAdult": 4,
-        "slChild": 2
+        "foreignerAdult": 13,
+        "foreignerChild": 8,
+        "slAdult": 6,
+        "slChild": 3
       }
     },
     {
-      "duration": "Normal",
+      "duration": "Peak",
       "start": "4.00 PM",
       "end": "5.00 PM",
       "charges": {
-        "foreignerAdult": 10,
-        "foreignerChild": 5,
-        "slAdult": 4,
-        "slChild": 2
+        "foreignerAdult": 13,
+        "foreignerChild": 8,
+        "slAdult": 6,
+        "slChild": 3
       }
     },
     {
