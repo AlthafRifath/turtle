@@ -1,40 +1,43 @@
 console.info("Ticket Page Loaded");
 
+// Alpine JS
 document.addEventListener("alpine:init", () => {
-    
-    fetch('JSON/Tickets.json')
-        .then(response => response.json())
-        .then(jsonData => {
-            console.log('Data fetched:', jsonData);
-            initializeApp(jsonData);
-        })
-        .catch(error => {
-            console.error('Error fetching data:', error);
-        });
-    
-    function initializeApp(jsonData) {
-        Alpine.data('tickets', {
-            selectedTimeSlot: '',
-            selectedDate: '',
-            slAdultTickets: 0,
-            slChildTickets: 0,
-            foreignerAdultTickets: 0,
-            foreignerChildTickets: 0,
-            durations: jsonData.durations,
+  Alpine.store('ticketsModel', {
 
-            gotoDetailsPage() {
-                const inputData = {
-                    selectedTimeSlot: this.selectedTimeSlot,
-                    selectedDate: this.selectedDate,
-                    slAdultTickets: this.slAdultTickets,
-                    slChildTickets: this.slChildTickets,
-                    foreignerAdultTickets: this.foreignerAdultTickets,
-                    foreignerChildTickets: this.foreignerChildTickets,
-                };
-                localStorage.setItem('ticketsData', JSON.stringify(inputData));
-                window.location.href = "Details.html";
-            }
-        });
-        console.log("Tickets JSON Data", JSON.stringify(jsonData));
+    // date : null,
+    // duration: null,
+    // guests: null,
+
+    // user input values
+
+    init() {
+
     }
+  });
 });
+
+
+// Vanilla JS
+console.log('data store loaded');
+fetch('JSON/Tickets.json')
+  .then(response => response.json())
+  .then(jsonData => {
+    console.log('Data fetched:', jsonData);
+    this.duration = jsonData.duration;
+    document.addEventListener('DOMContentLoaded', function () {
+      const timeSlotSelect = document.getElementById('timeSlot');
+      console.log('Select element:', timeSlotSelect); // Check if the select element is found
+
+      jsonData.durations.forEach((duration => {
+        const option = document.createElement('option');
+        option.value = "${duration.start}-${duration.end}";
+        option.textContent = `${duration.start} - ${duration.end} ${duration.duration === "Peak" ? "(Peak)" : ""}`;
+        timeSlotSelect.appendChild(option);
+        console.log('Appended option:', option); // Check if the option is being created and appended
+
+      }))
+    });
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
