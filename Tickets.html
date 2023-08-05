@@ -7,12 +7,6 @@
     <title>Buy Tickets - Turtle Hatcheries in Sri Lanka</title>
     <link rel="icon" href="Images/Favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="CSS/Tickets.css">
-    <script src="javaScript/Tickets.js"></script>
-    <script src="javaScript/Payment.js"></script>
-    <script src="javaScript/Confirmation.js"></script>
-    <script src="javaScript/Details.js"></script>
-    <script src="https://unpkg.com/alpinejs" defer></script>
-    <script src="javaScript/Router.js"></script>
 </head>
 
 <body>
@@ -24,25 +18,25 @@
 
     <!--Ticket Step-->
     <div class="main" x-data="{
-        selectedTimeSlot: '',
-        selectedDate: '',
-        slAdultTickets: 0,
-        slChildTickets: 0,
-        foreignerAdultTickets: 0,
-        foreignerChildTickets: 0,
-        
-        gotoDetailsPage() {
-            const inputData = {
-                selectedTimeSlot: this.selectedTimeSlot,
-                selectedDate: this.selectedDate,
-                slAdultTickets: this.slAdultTickets,
-                slChildTickets: this.slChildTickets,
-                foreignerAdultTickets: this.foreignerAdultTickets,
-                foreignerChildTickets: this.foreignerChildTickets,
-            };
-            localStorage.setItem('ticketsData', JSON.stringify(inputData));
-            window.location.href = 'Details.html';
-        }
+        selectedTimeSlot: [],
+    selectedDate: '',
+    slAdultTickets: 0,
+    slChildTickets: 0,
+    foreignerAdultTickets: 0,
+    foreignerChildTickets: 0,
+
+    gotoDetailsPage() {
+      const inputData = {
+        selectedTimeSlot: this.selectedTimeSlot,
+        selectedDate: this.selectedDate,
+        slAdultTickets: this.slAdultTickets,
+        slChildTickets: this.slChildTickets,
+        foreignerAdultTickets: this.foreignerAdultTickets,
+        foreignerChildTickets: this.foreignerChildTickets,
+      };
+      localStorage.setItem('ticketsData', JSON.stringify(inputData));
+      window.location.href = 'Details.html';
+    },
     }">
         <div class="dates-serction">
             <h2>Dates</h2>
@@ -84,7 +78,7 @@
         <div class="duration-section">
             <h2>Duration</h2>
             <p>Select the duration of your visit:</p>
-            <select name="timeSlot" id="timeSlot" x-model="selectedTimeSlot"></select>
+            <select name="timeSlot" id="timeSlot" x-model="selectedTimeSlot" multiple></select>
 
             <h2>Visitors will be charged based on 1 hour based time slots</h2>
             <ul>
@@ -145,7 +139,12 @@
         <button x-on:click="$store.router.goto('Hello World')">Continue with Purchase</button>
         <button x-on:click="gotoDetailsPage">Continue with Purchase</button>
     </div>
-
+    <script src="javaScript/Tickets.js" defer></script>
+    <script src="javaScript/Payment.js"></script>
+    <script src="javaScript/Confirmation.js"></script>
+    <script src="javaScript/Details.js"></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <script src="javaScript/Router.js"></script>
 </body>
 
 </html>

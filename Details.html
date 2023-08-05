@@ -1,84 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Details Page</title>
     <link rel="icon" href="Images/Favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="CSS/Tickets.css">
-    <script src="javaScript/Tickets.js"></script>
-    <script src="javaScript/Payment.js"></script>
-    <script src="javaScript/Confirmation.js"></script>
-    <script src="javaScript/Details.js"></script>
+    <script src="javaScript/Router.js"></script>
     <script src="https://unpkg.com/alpinejs" defer></script>
 </head>
+
 <body>
-    
-    <section>
-        <h1>Details</h1>
-        <p>Enter your details to proceed with the payment</p>
-    </section>
-
-    <!-- <div x-data="{steps: ['Tickets', 'Details', 'Confirmation', 'Payment']}">
-        <header>
-            <ul>
-                <template x-for="(step, index) in steps" x-key="index">
-                    <li>
-                        <span x-text="step"></span>
-                        <span x-show="currentStep == step"> (step)</span>   //This was used make a SPA (Single Page Application)
-                    </li>
-                </template>
-            </ul>
-        </header>
-    </div> -->
-
-    <!--Details Step-->
     <div class="main" x-data="details">
-        <h2>Details</h2>
-        <div class="summary-table">
-            <table>
-                <tr>
-                    <td>Date</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Time</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Duration</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td class="tickets-cell">Tickets</td>
-                    <td class="charges-cell">Charges</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Total Payable</td>
-                    <td></td>
-                </tr>
-            </table>
-        </div>
-        <div class="form">
-            <h2>Enter Your Details</h2>
-            <form>
-                <label for="fullName"><b>Full Name</b></label>
-                <input type="text" name="firstName" id="fulltName" placeholder="Enter your Full Name" required>
-                <label for="phone"><b>Mobile Number</b></label>
-                <input type="tel" name="phone" id="phone" placeholder="Enter your Phone Number" required>
-                <label for="email"><b>Email</b></label>
-                <input type="email" name="email" id="email" placeholder="Enter your Email" required>
-                <label for="confirmEmail"><b>Confirm Email</b></label>
-                <input type="email" name="confirmEmail" id="confirmEmail" placeholder="Confirm your Email" required>
-            </form>
-        </div>
-        <button x-on:click="currentStep = 'tickets'">Previous</button>
-        <button x-on:click="currentStep = 'confirmation'">Next</button>
+        <section>
+            <h2>Details</h2>
+            <div class="summary-table">
+                <table>
+                    <tr>
+                        <td>Date</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Time</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Duration</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="tickets-cell">Tickets</td>
+                        <td class="charges-cell">Charges</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Total Payable</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="form">
+                <h2>Enter Your Details</h2>
+                <form>
+                    <label for="fullName"><b>Full Name</b></label>
+                    <input type="text" name="firstName" id="fulltName" placeholder="Enter your Full Name" required>
+                    <label for="phone"><b>Mobile Number</b></label>
+                    <input type="tel" name="phone" id="phone" placeholder="Enter your Phone Number" required>
+                    <label for="email"><b>Email</b></label>
+                    <input type="email" name="email" id="email" placeholder="Enter your Email" required>
+                    <label for="confirmEmail"><b>Confirm Email</b></label>
+                    <input type="email" name="confirmEmail" id="confirmEmail" placeholder="Confirm your Email" required>
+                </form>
+            </div>
+            <button x-on:click="currentStep = 'tickets'">Previous</button>
+            <button x-on:click="currentStep = 'confirmation'">Next</button>
+        </section>
     </div>
 
 </body>
+
 </html>

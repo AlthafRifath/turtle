@@ -2,15 +2,23 @@ console.info("Ticket Page Loaded");
 
 // Alpine JS
 document.addEventListener("alpine:init", () => {
-  Alpine.store('ticketsModel', {
-
-    // date : null,
-    // duration: null,
-    // guests: null,
-
-    // user input values
+  Alpine.data('ticketsModel', {
+    
+    selectedTimeSlot(index) {
+      if (this.selectedTimeSlot.includes(index)) {
+        this.selectedTimeSlot = this.selectedTimeSlot.filter((i) => i !== index);
+      } else {
+        let lastElement = this.selectedTimeSlot[this.selectedTimeSlot.length - 1];
+        if (!this.selectedTimeSlot.length || (index - lastElement === 1)) {
+          this.selectedTimeSlot.push(index);
+        } else {
+          alert('Please select the time slots in order');
+        }
+      }
+    },
 
     init() {
+      console.log("Alpine Store Loaded");
 
     }
   });
