@@ -23,6 +23,11 @@ document.addEventListener("alpine:init", () => {
                     console.log('Data Fetched:', jsonData);
                     this.durations = jsonData.durations; // Assign durations from JSON
                     this.calculateCharges(); // Call calculateCharges after data is fetched
+                    jsonData.durations.forEach(duration => {
+                        const startHour = parseInt(duration.start);
+                        const endHour = parseInt(duration.end);
+                        duration.hours = endHour - startHour;
+                    })
                 })
                 .catch(error => console.error('Error Fetching Data', error));
         },
