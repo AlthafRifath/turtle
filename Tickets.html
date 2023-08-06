@@ -7,144 +7,138 @@
     <title>Buy Tickets - Turtle Hatcheries in Sri Lanka</title>
     <link rel="icon" href="Images/Favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="CSS/Tickets.css">
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <script src="javaScript/Tickets.js"></script>
+    <script src="javaScript/Router.js"></script>
 </head>
 
 <body>
 
-    <section class="super-head">
-        <h1>Buy Tickets</h1>
-        <p>Buy your tickets from our website today and explore more of our offerings</p>
-    </section>
+    <div x-data="ticketsData">
+        <section class="main">
+            <div class="dates-section">
+                <h2>Dates</h2>
+                <p>Select a Date from the Calander</p>
+                <input type="date" name="selectedDate" x-model="selectedDate">
+            </div>
 
-    <!--Ticket Step-->
-    <div class="main" x-data="{
-        selectedTimeSlot: [],
-    selectedDate: '',
-    slAdultTickets: 0,
-    slChildTickets: 0,
-    foreignerAdultTickets: 0,
-    foreignerChildTickets: 0,
+            <div class="duration-section">
+                <h2>Duration</h2>
+                <p>Select the Duration of the Visit</p>
+                <div x-init="fetchData()">
+                    <select name="timeSlot" x-model="selectedTimeSlot" id="timeSlot">
+                        <template x-for="duration in durations" :key="duration.start">
+                            <option :value="duration.start + '-' + duration.end">
+                                <span x-text="formatDuration(duration)"></span>
+                            </option>
+                        </template>
+                    </select>
+                </div>
 
-    gotoDetailsPage() {
-      const inputData = {
-        selectedTimeSlot: this.selectedTimeSlot,
-        selectedDate: this.selectedDate,
-        slAdultTickets: this.slAdultTickets,
-        slChildTickets: this.slChildTickets,
-        foreignerAdultTickets: this.foreignerAdultTickets,
-        foreignerChildTickets: this.foreignerChildTickets,
-      };
-      localStorage.setItem('ticketsData', JSON.stringify(inputData));
-      window.location.href = 'Details.html';
-    },
-    }">
-        <div class="dates-serction">
-            <h2>Dates</h2>
-            <p>Select a Date from the Calander</p>
-            <input type="date" name="selectedDate" id="selectedDate" x-model="selectedDate">
-        </div>
+                <h2>Visitors will be charged based on 1 hour based time slots</h2>
+                <ul>
+                    <li>
+                        Charge per one Normal hour for Foreigner Adult - 10 USD
+                    </li>
+                    <li>
+                        <b>Charge per one Peak hour for Foreigner Adult - 13 USD</b>
+                    </li>
+                    <li>
+                        Charge per one Normal hour for Foreigner Child - 5 USD
+                    </li>
+                    <li>
+                        <b>Charge per one Peak hour for Foreigner Child - 8 USD</b>
+                    </li>
+                    <li>
+                        Charge per one Normal hour for SL Adult - 4 USD
+                    </li>
+                    <li>
+                        <b>Charge per one Peak hour for SL Adult - 6 USD</b>
+                    </li>
+                    <li>
+                        Charge per one Normal hour for SL Child - 2 USD
+                    </li>
+                    <li>
+                        <b>Charge per one Peak hour for SL Child - 3 USD</b>
+                    </li>
+                </ul>
+            </div>
 
-        <div class="guest-section">
-            <h2>Guests</h2>
-            <p>Select the number of tickets needed for each category:</p>
-            <table>
-                <tr>
-                    <td>SL Adult</td>
-                    <td><input type="number" id="slAdultTickets" name="slAdultTickets" min="0" x-model="slAdultTickets">
-                    </td>
-                </tr>
-                <tr>
-                    <td>SL Child</td>
-                    <td><input type="number" name="slChildTickets" id="slChildTickets" min="0" x-model="slChildTickets">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Foreigner Adult</td>
-                    <td><input type="number" name="foreignerAdultTickets" id="foreignerAdultTickets" min="0"
-                            x-model="foreignerAdultTickets"></td>
-                </tr>
-                <tr>
-                    <td>Foreigner Child</td>
-                    <td><input type="number" name="foreignerChildTickets" id="foreignerChildTickets" min="0"
-                            x-model="foreignerChildTickets"></td>
-                </tr>
-                <tr>
-                    <td>Infant</td>
-                    <td>Free (Under 4 Years)</td>
-                </tr>
-            </table>
-        </div>
+            <div class="guest-section">
+                <h2>Guests</h2>
+                <p>Select the number of tickets needed for each Category</p>
+                <table>
+                    <tr>
+                        <td>SL Adult</td>
+                        <td><input type="number" name="slAdultTickets" min="0" x-model="slAdultTickets" x-on:input="calculateCharges"></td>
+                    </tr>
+                    <tr>
+                        <td>SL Child</td>
+                        <td><input type="number" name="slChildTickets" min="0" x-model="slChildTickets" x-on:input="calculateCharges"></td>
+                    </tr>
+                    <tr>
+                        <td>Foreigner Adult</td>
+                        <td><input type="number" name="foreignerAdultTickets" min="0" x-model="foreignerAdultTickets" x-on:input="calculateCharges">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Foreigner Child</td>
+                        <td><input type="number" name="foreignerChildTickets" min="0" x-model="foreignerChildTickets" x-on:input="calculateCharges">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Infant</td>
+                        <td>Free (Under 4 Years)</td>
+                    </tr>
+                </table>
+            </div>
 
-        <div class="duration-section">
-            <h2>Duration</h2>
-            <p>Select the duration of your visit:</p>
-            <select name="timeSlot" id="timeSlot" x-model="selectedTimeSlot" multiple></select>
+            <div class="summary-table">
+                <table>
+                    <tr>
+                        <td>Date</td>
+                        <td x-text="selectedDate"></td>
+                    </tr>
+                    <tr>
+                        <td>Time</td>
+                        <td x-text="selectedTimeSlot"></td>
+                    </tr>
+                    <tr>
+                        <td>Duration</td>
+                        <td x-text="getSelectedDuration() ? getSelectedDuration().duration : ''"></td>
+                    </tr>
+                    <tr>
+                        <td class="tickets-cell">Tickets</td>
+                        <td class="charges-cell">Charges</td>
+                    </tr>
+                    <tr>
+                        <td>SL Adult</td>
+                        <td x-text="slAdultCharges"></td>
+                    </tr>
+                    <tr>
+                        <td>SL Child</td>
+                        <td x-text="slChildCharges"></td>
+                    </tr>
+                    <tr>
+                        <td>Foreigner Adult</td>
+                        <td x-text="foreignerAdultCharges"></td>
+                    </tr>
+                    <tr>
+                        <td>Foreigner Child</td>
+                        <td x-text="foreignerChildCharges"></td>
+                    </tr>
+                    <tr>
+                        <td>Total Payable</td>
+                        <td x-text="totalCharges"></td>
+                    </tr>
+                </table>
+            </div>
 
-            <h2>Visitors will be charged based on 1 hour based time slots</h2>
-            <ul>
-                <li>
-                    Charge per one Normal hour for Foreigner Adult - 10 USD
-                </li>
-                <li>
-                    <b>Charge per one Peak hour for Foreigner Adult - 13 USD</b>
-                </li>
-                <li>
-                    Charge per one Normal hour for Foreigner Child - 5 USD
-                </li>
-                <li>
-                    <b>Charge per one Peak hour for Foreigner Child - 8 USD</b>
-                </li>
-                <li>
-                    Charge per one Normal hour for SL Adult - 4 USD
-                </li>
-                <li>
-                    <b>Charge per one Peak hour for SL Adult - 6 USD</b>
-                </li>
-                <li>
-                    Charge per one Normal hour for SL Child - 2 USD
-                </li>
-                <li>
-                    <b>Charge per one Peak hour for SL Child - 3 USD</b>
-                </li>
-            </ul>
-        </div>
-        <div class="summary-table">
-            <table>
-                <tr>
-                    <td>Date</td>
-                    <td x-text="selectedDate"></td>
-                </tr>
-                <tr>
-                    <td>Time</td>
-                    <td x-text="selectedTimeSlot"></td>
-                </tr>
-                <tr>
-                    <td>Duration</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td class="tickets-cell">Tickets</td>
-                    <td class="charges-cell">Charges</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Total Payable</td>
-                    <td></td>
-                </tr>
-            </table>
-        </div>
-        <button x-on:click="$store.router.goto('Hello World')">Continue with Purchase</button>
-        <button x-on:click="gotoDetailsPage">Continue with Purchase</button>
+            <button x-on:click="$store.router.goto('Details Page')">Continue</button>
+
+        </section>
     </div>
-    <script src="javaScript/Tickets.js" defer></script>
-    <script src="javaScript/Payment.js"></script>
-    <script src="javaScript/Confirmation.js"></script>
-    <script src="javaScript/Details.js"></script>
-    <script src="https://unpkg.com/alpinejs" defer></script>
-    <script src="javaScript/Router.js"></script>
+
 </body>
 
 </html>
