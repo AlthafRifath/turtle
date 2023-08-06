@@ -2,7 +2,7 @@ console.log("Tickets Page Loaded");
 
 document.addEventListener("alpine:init", () => {
     Alpine.data('ticketsData', () => ({
-        selectedTimeSlot: "",
+        selectedTimeSlot: [],
         durations: [],
         selectedDate: null,
         slAdultTickets: 0,
