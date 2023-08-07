@@ -52,5 +52,25 @@ document.addEventListener("alpine:init", () => {
 
             this.totalCharges = this.slAdultCharges + this.slChildCharges + this.foreignerAdultCharges + this.foreignerChildCharges;
         },
+
+        saveData () {
+            const inputData = {
+                selectedTimeSlot: this.selectedTimeSlot,
+                durations: this.durations,
+                selectedDate: this.selectedDate,
+                slAdultTickets: this.slAdultTickets,
+                slChildTickets: this.slChildTickets,
+                foreignerAdultTickets: this.foreignerAdultTickets,
+                foreignerChildTickets: this.foreignerChildTickets,
+                slAdultCharges: this.slAdultCharges,
+                slChildCharges: this.slChildCharges,
+                foreignerAdultCharges: this.foreignerAdultCharges,
+                foreignerChildCharges: this.foreignerChildCharges,
+                totalCharges: this.totalCharges,
+            };
+
+            localStorage.setItem('ticketsData', JSON.stringify(inputData));
+        },
+
     }));
 });
