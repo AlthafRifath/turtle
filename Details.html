@@ -21,15 +21,15 @@
                 <table>
                     <tr>
                         <td>Data</td>
-                        <td></td>
+                        <td x-text="selectedDate"></td>
                     </tr>
                     <tr>
                         <td>Time</td>
-                        <td></td>
+                        <td x-text="selectedTimeSlot"></td>
                     </tr>
                     <tr>
                         <td>Duration</td>
-                        <td></td>
+                        <td x-text="calculateDurationHours()"></td>
                     </tr>
                     <tr>
                         <td class="tickets-cell">Tickets</td>
@@ -37,23 +37,23 @@
                     </tr>
                     <tr>
                         <td>SL Adult</td>
-                        <td></td>
+                        <td x-text="slAdultCharges"></td>
                     </tr>
                     <tr>
                         <td>SL Child</td>
-                        <td></td>
+                        <td x-text="slChildCharges"></td>
                     </tr>
                     <tr>
                         <td>Foreigner Adult</td>
-                        <td></td>
+                        <td x-text="foreignerAdultCharges"></td>
                     </tr>
                     <tr>
                         <td>Foreigner Child</td>
-                        <td></td>
+                        <td x-text="foreignerChildCharges"></td>
                     </tr>
                     <tr>
                         <td>Total Payable</td>
-                        <td></td>
+                        <td x-text="totalCharges"></td>
                     </tr>
                 </table>
             </div>
