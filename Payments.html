@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments</title>
+    <link rel="icon" href="Images/Favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/Tickets.css">
+    <script src="javaScript/Router.js"></script>
+    <script src="javaScript/Tickets.js"></script>
+    <script src="javaScript/Details.js"></script>
+    <script src="javaScript/Payment.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+</head>
+<body>
+    <div class="main" x-data="payments">
+        <section>
+            <div class="card-payment" id="card-payment">
+                <label for="cardNumber">Card Number</label>
+                <input type="number" name="cardNumber" x-model="cardNumber">
+                <label for="expiryDate">Expiry Date</label>
+                <input type="date" name="expiryDate" x-model="expiryDate">
+                <label for="cvv/cvc">CVV/CVC</label>
+                <input type="number" name="cvv/cvc" x-model="cvv">
+                <label for="nameOnTheCard">Name on the Card</label>
+                <input type="text" name="nameOnTheCard" x-model="nameOnTheCard">
+                <button type="submit" x-on:click="$store.router.goto('Confirmation'); saveData()">Submit</button>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>
