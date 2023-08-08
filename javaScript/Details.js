@@ -55,5 +55,12 @@ document.addEventListener('alpine:init', () => {
                 this.totalCharges = inputData.totalCharges;
             }
         },
+
+        saveData() {
+            const inputData = {
+                visitors: this.visitors,
+            };
+            localStorage.setItem('details', JSON.stringify(inputData));
+        },
     }));
 });
