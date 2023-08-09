@@ -88,7 +88,7 @@
                 </form>
             </div>
 
-            <button x-bind:disabled="!visitors.fullname || !visitors.mobile || !visitors.email || !visitors.confirmationEmail" x-on:click="$store.router.goto('Payments'); saveData()">Goto Payment</button>
+            <button x-bind:disabled="!visitors.fullname || !visitors.mobile || (!visitors.email || !visitors.confirmationEmail || visitors.email !== visitors.confirmationEmail)" x-on:click="$store.router.goto('Payments'); saveData()">Goto Payment</button>
             
         </section>
     </div>
