@@ -85,11 +85,11 @@
                             <option value="">None</option>
                         </select>
                     </div>
-                    <div>
-                        <button x-bind:disabled="!visitors.fullname || !visitors.mobile || !visitors.email || !visitors.confirmationEmail" x-on:click="$store.router.goto('Payments'); saveData()">Goto Payment</button>
-                    </div>
                 </form>
             </div>
+
+            <button x-bind:disabled="!visitors.fullname || !visitors.mobile || !visitors.email || !visitors.confirmationEmail" x-on:click="$store.router.goto('Payments'); saveData()">Goto Payment</button>
+            
         </section>
     </div>
     
