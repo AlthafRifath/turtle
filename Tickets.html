@@ -134,7 +134,7 @@
                 </table>
             </div>
 
-            <button x-on:click="$store.router.goto('Details'); saveData()">Continue</button>
+            <button x-bind:disabled="!selectedDate || !selectedTimeSlot || (!slAdultTickets && !slChildTickets && !foreignerAdultTickets && !foreignerChildTickets)" x-on:click="$store.router.goto('Details'); saveData()">Continue</button>
 
         </section>
     </div>
