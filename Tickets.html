@@ -111,19 +111,19 @@
                         <td class="tickets-cell">Tickets</td>
                         <td class="charges-cell">Charges</td>
                     </tr>
-                    <tr>
+                    <tr x-show="slAdultCharges">
                         <td>SL Adult</td>
                         <td x-text="slAdultCharges"></td>
                     </tr>
-                    <tr>
+                    <tr x-show="slChildCharges">
                         <td>SL Child</td>
                         <td x-text="slChildCharges"></td>
                     </tr>
-                    <tr>
+                    <tr x-show="foreignerAdultCharges">
                         <td>Foreigner Adult</td>
                         <td x-text="foreignerAdultCharges"></td>
                     </tr>
-                    <tr>
+                    <tr x-show="foreignerChildCharges">
                         <td>Foreigner Child</td>
                         <td x-text="foreignerChildCharges"></td>
                     </tr>
