@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payments</title>
     <link rel="icon" href="Images/Favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="CSS/Tickets.css">
+    <link rel="stylesheet" href="CSS/Payments.css">
     <script src="javaScript/Router.js"></script>
     <script src="javaScript/Tickets.js"></script>
     <script src="javaScript/Details.js"></script>
@@ -16,14 +16,15 @@
 <body>
     <div class="main" x-data="payments">
         <section>
+            <h2>Payments</h2>
             <div class="card-payment" id="card-payment">
-                <label for="cardNumber">Card Number</label>
+                <label for="cardNumber"><b>Card Number</b></label>
                 <input type="number" name="cardNumber" x-model="cardNumber">
-                <label for="expiryDate">Expiry Date</label>
+                <label for="expiryDate"><b>Expiry Date</b></label>
                 <input type="date" name="expiryDate" x-model="expiryDate">
-                <label for="cvv/cvc">CVV/CVC</label>
+                <label for="cvv/cvc"><b>CVV/CVC</b></label>
                 <input type="number" name="cvv/cvc" x-model="cvv">
-                <label for="nameOnTheCard">Name on the Card</label>
+                <label for="nameOnTheCard"><b>Name on the Card</b></label>
                 <input type="text" name="nameOnTheCard" x-model="nameOnTheCard">
                 <button type="submit" x-on:click="$store.router.goto('Confirmation'); saveData()">Submit</button>
             </div>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Details Page</title>
     <link rel="icon" href="Images/Favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="CSS/Tickets.css">
+    <link rel="stylesheet" href="CSS/Details.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.css">
     <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/intlTelInput.min.js"></script>
     <script src="javaScript/Router.js"></script>
@@ -61,24 +61,24 @@
             <div class="form">
                 <form>
                     <div>
-                        <label for="fullname">Full Name</label>
+                        <label for="fullname"><b>Full Name</b></label>
                         <input type="text" name="fullname" id="fullname" x-model="visitors.fullname" required>
                     </div>
                     <div>
-                        <label for="mobile">Mobile</label>
+                        <label for="mobile"><b>Mobile</b></label>
                         <input type="tel" name="mobile" id="mobile" x-model="visitors.mobile" required>
                     </div>
                     <div>
-                        <label for="email">Email</label>
+                        <label for="email"><b>Email</b></label>
                         <input type="email" name="email" id="email" x-model="visitors.email" required>
                     </div>
                     <div>
-                        <label for="confirmationEmail"></label>
+                        <label for="confirmationEmail"><b>Confirm Email</b></label>
                         <input type="email" name="confirmationEmail" id="confirmationEmail" x-model="visitors.confirmationEmail" required>
                         <!-- <p x-show="visitors.email && visitors.confirmationEmail && visitors.email !== visitors.confirmationEmail">Emails do not match!</p> -->
                     </div>
                     <div>
-                        <label for="gender"></label>
+                        <label for="gender"><b>Select Gender (Optional)</b></label>
                         <select type="gender" name="gender" id="gender" x-model="visitors.gender">
                             <option value="male">Male</option>
                             <option value="female">Female</option>
