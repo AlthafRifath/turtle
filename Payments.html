@@ -23,7 +23,7 @@
                 <label for="expiryDate"><b>Expiry Date</b></label>
                 <input type="text" name="expiryDate" x-model="expiryDate" x-mask="99/99" placeholder="MM/YY">
                 <label for="cvv/cvc"><b>CVV/CVC</b></label>
-                <input type="text" name="cvv/cvc" x-model="cvv" x-mask="000" placeholder="000">
+                <input type="text" name="cvv/cvc" x-model="cvv" x-mask="999" placeholder="000">
                 <label for="nameOnTheCard"><b>Name on the Card</b></label>
                 <input type="text" name="nameOnTheCard" x-model="nameOnTheCard" placeholder="John Doe">
                 <button x-bind:disabled="!cardNumber || !expiryDate || !cvv || !nameOnTheCard" type="submit" x-on:click="$store.router.goto('Confirmation'); saveData()">Submit</button>
