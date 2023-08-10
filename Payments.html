@@ -26,7 +26,7 @@
                 <input type="number" name="cvv/cvc" x-model="cvv">
                 <label for="nameOnTheCard"><b>Name on the Card</b></label>
                 <input type="text" name="nameOnTheCard" x-model="nameOnTheCard">
-                <button type="submit" x-on:click="$store.router.goto('Confirmation'); saveData()">Submit</button>
+                <button x-bind:disabled="!cardNumber || !expiryDate || !cvv || !nameOnTheCard" type="submit" x-on:click="$store.router.goto('Confirmation'); saveData()">Submit</button>
             </div>
         </section>
 

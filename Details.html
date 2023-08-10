@@ -75,7 +75,8 @@
                     <div>
                         <label for="confirmationEmail"><b>Confirm Email</b></label>
                         <input type="email" name="confirmationEmail" id="confirmationEmail" x-model="visitors.confirmationEmail" required>
-                        <!-- <p x-show="visitors.email && visitors.confirmationEmail && visitors.email !== visitors.confirmationEmail">Emails do not match!</p> -->
+                        <p x-show="visitors.email && visitors.confirmationEmail && visitors.email !== visitors.confirmationEmail" style="color: red;"><b>Emails do not match!</b></p>
+                        <br>
                     </div>
                     <div>
                         <label for="gender"><b>Select Gender (Optional)</b></label>
