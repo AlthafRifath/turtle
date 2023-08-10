@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,14 +14,73 @@
     <script src="javaScript/Confirmation.js"></script>
     <script src="javaScript/Router.js"></script>
 </head>
+
 <body>
     <div x-data="confirmation">
         <section class="main">
             <h2>Confirmation</h2>
-            <div>
-
+            <div class="summary-table">
+                <table>
+                    <tr>
+                        <td>Name</td>
+                        <td>Your Name</td>
+                    </tr>
+                    <tr>
+                        <td>Date</td>
+                        <td x-text="selectedDate"></td>
+                    </tr>
+                    <tr>
+                        <td>Time</td>
+                        <td x-text="selectedTimeSlot"></td>
+                    </tr>
+                    <tr>
+                        <td>Duration</td>
+                        <td x-text="calculateDurationHours()"></td>
+                    </tr>
+                    <tr>
+                        <td>Mobile</td>
+                        <td>Your Mobile Number</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>Your Email Address</td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>Your Gender</td>
+                    </tr>
+                    <tr>
+                        <td>Tickets</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>SL Adult</td>
+                        <td x-text="slAdultCharges"></td>
+                    </tr>
+                    <tr>
+                        <td>SL Child</td>
+                        <td x-text="slChildCharges"></td>
+                    </tr>
+                    <tr>
+                        <td>Foreigner Adult</td>
+                        <td x-text="foreignerAdultCharges"></td>
+                    </tr>
+                    <tr>
+                        <td>Foreigner Child</td>
+                        <td x-text="foreignerChildCharges"></td>
+                    </tr>
+                    <tr>
+                        <td>Infant</td>
+                        <td>Your Infant Details</td>
+                    </tr>
+                    <tr>
+                        <td>Total Payable</td>
+                        <td x-text="totalCharges"></td>
+                    </tr>
+                </table>
             </div>
         </section>
     </div>
 </body>
+
 </html>
