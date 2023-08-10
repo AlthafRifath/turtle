@@ -10,7 +10,7 @@
     <script src="javaScript/Tickets.js"></script>
     <script src="javaScript/Details.js"></script>
     <script src="javaScript/Payment.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.x.x/dist/cdn.min.js" defer></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script>
     <script src="https://unpkg.com/alpinejs" defer></script>
 </head>
 <body>
@@ -19,13 +19,13 @@
             <h2>Payments</h2>
             <div class="card-payment" id="card-payment">
                 <label for="cardNumber"><b>Card Number</b></label>
-                <input type="number" name="cardNumber" x-model="cardNumber">
+                <input type="text" name="cardNumber" x-model="cardNumber" x-mask="9999-9999-9999-9999" placeholder="9999-9999-9999-9999">
                 <label for="expiryDate"><b>Expiry Date</b></label>
-                <input type="date" name="expiryDate" x-model="expiryDate">
+                <input type="text" name="expiryDate" x-model="expiryDate" x-mask="99/99" placeholder="MM/YY">
                 <label for="cvv/cvc"><b>CVV/CVC</b></label>
-                <input type="number" name="cvv/cvc" x-model="cvv">
+                <input type="text" name="cvv/cvc" x-model="cvv" x-mask="000" placeholder="000">
                 <label for="nameOnTheCard"><b>Name on the Card</b></label>
-                <input type="text" name="nameOnTheCard" x-model="nameOnTheCard">
+                <input type="text" name="nameOnTheCard" x-model="nameOnTheCard" placeholder="John Doe">
                 <button x-bind:disabled="!cardNumber || !expiryDate || !cvv || !nameOnTheCard" type="submit" x-on:click="$store.router.goto('Confirmation'); saveData()">Submit</button>
             </div>
         </section>
