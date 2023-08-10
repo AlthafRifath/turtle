@@ -12,6 +12,7 @@
     <script src="javaScript/Tickets.js"></script>
     <script src="javaScript/Details.js"></script>
     <script src="javaScript/Payment.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script>
     <script src="https://unpkg.com/alpinejs" defer></script>
 </head>
 <body>
@@ -66,7 +67,7 @@
                     </div>
                     <div>
                         <label for="mobile"><b>Mobile</b></label>
-                        <input type="tel" name="mobile" id="mobile" x-model="visitors.mobile" required>
+                        <input type="tel" name="mobile" id="mobile" x-model="visitors.mobile" x-mask="9999999999" required>
                     </div>
                     <div>
                         <label for="email"><b>Email</b></label>
