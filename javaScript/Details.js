@@ -57,10 +57,6 @@ document.addEventListener('alpine:init', () => {
         },
 
         saveData() {
-            if (visitors.email !== visitors.confirmationEmail) { // Check if emails match
-                console.log("Emails do not match"); 
-                return;
-            };
             const inputData = {
                 visitors: this.visitors,
             };
