@@ -163,6 +163,8 @@ nav ul ul li a:hover {
   align-items: center;
   justify-content: center;
   width: 100px;
+  color: #6C63FF;
+  font-style: italic;
 }
 
 .logo img {
