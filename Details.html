@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +16,28 @@
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script>
     <script src="https://unpkg.com/alpinejs" defer></script>
 </head>
+
 <body>
+    <header>
+        <div class="logo">
+            <h2>SeaTurtle</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Turtle Categories.html">Turtle Categories</a></li>
+                <li><a href="Hikkaduwa.html">Hikkaduwa Turtle Hatchery</a></li>
+                <li><a href="Threats.html">Threats to Turtles</a></li>
+                <!-- <li>
+              <button class="subnav">Other Hatcheries <i class="fa fa-caret-down"></i></button>
+              <ul>
+                  <li class="subnav1"><a href="Bentota.html">Bentota</a></li>
+                  <li class="subnav2"><a href="Kosgoda.html">Kosgoda</a></li>
+              </ul> -->
+                <li><a href="Purchase and Donate.html">Purchase and Donate</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="main" x-data="details">
         <section>
             <h2>Details</h2>
@@ -67,7 +89,8 @@
                     </div>
                     <div>
                         <label for="mobile"><b>Mobile</b></label>
-                        <input type="tel" name="mobile" id="mobile" x-model="visitors.mobile" x-mask="9999999999" required>
+                        <input type="tel" name="mobile" id="mobile" x-model="visitors.mobile" x-mask="9999999999"
+                            required>
                     </div>
                     <div>
                         <label for="email"><b>Email</b></label>
@@ -75,8 +98,10 @@
                     </div>
                     <div>
                         <label for="confirmationEmail"><b>Confirm Email</b></label>
-                        <input type="email" name="confirmationEmail" id="confirmationEmail" x-model="visitors.confirmationEmail" required>
-                        <p x-show="visitors.email && visitors.confirmationEmail && visitors.email !== visitors.confirmationEmail" style="color: red;"><b>Emails do not match!</b></p>
+                        <input type="email" name="confirmationEmail" id="confirmationEmail"
+                            x-model="visitors.confirmationEmail" required>
+                        <p x-show="visitors.email && visitors.confirmationEmail && visitors.email !== visitors.confirmationEmail"
+                            style="color: red;"><b>Emails do not match!</b></p>
                         <br>
                     </div>
                     <div>
@@ -90,44 +115,51 @@
                 </form>
             </div>
 
-            <button x-bind:disabled="!visitors.fullname || !visitors.mobile || (!visitors.email || !visitors.confirmationEmail || visitors.email !== visitors.confirmationEmail)" x-on:click="$store.router.goto('Payments'); saveData()">Goto Payment</button>
-            
+            <button
+                x-bind:disabled="!visitors.fullname || !visitors.mobile || (!visitors.email || !visitors.confirmationEmail || visitors.email !== visitors.confirmationEmail)"
+                x-on:click="$store.router.goto('Payments'); saveData()">Goto Payment</button>
+
         </section>
     </div>
 
     <footer class="footer1">
         <div class="footer-left">
-          <ul>
-            <li><h3>Quick Links</h3></li>
-            <br>
-            <li><a href="index.html">Home</a></li>
-            <br>
-            <li><a href="Purchase and Donate.html">Purchase and Donate</a></li>
-            <br>
-            <li><a href="Turtle Categories.html">Turtle Categories</a></li>
-            <br>
-            <li><a href="Bentota.html">Bentota</a></li>
-          </ul>
+            <ul>
+                <li>
+                    <h3>Quick Links</h3>
+                </li>
+                <br>
+                <li><a href="index.html">Home</a></li>
+                <br>
+                <li><a href="Purchase and Donate.html">Purchase and Donate</a></li>
+                <br>
+                <li><a href="Turtle Categories.html">Turtle Categories</a></li>
+                <br>
+                <li><a href="Bentota.html">Bentota</a></li>
+            </ul>
         </div>
         <div class="footer-middle">
-          <form>
-            <h3>Subscribe to our Newsletter</h3>
-            <input type="email" placeholder="Enter your email" required>
-            <button type="submit">Subscribe</button>
-          </form>
+            <form>
+                <h3>Subscribe to our Newsletter</h3>
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
         </div>
         <div class="contact-us">
-          <h3>Contact Us</h3>
-          <p>Email: hikkaduwahatchery@gmail.com</p>
-          <br>
-          <p>Phone: +94 777 779 228</p>
-          <br>
-          <p>Location: Hikkaduwa</p>
+            <h3>Contact Us</h3>
+            <p>Email: hikkaduwahatchery@gmail.com</p>
+            <br>
+            <p>Phone: +94 777 779 228</p>
+            <br>
+            <p>Location: Hikkaduwa</p>
         </div>
-      </footer>
-      <footer class="footer2">
-        <p>&copy; 2023 Turtle Hatcheries Sri Lanka. All rights reserved. Designed and Developed by <a href="https://www.linkedin.com/in/althaf-rifath/" target="_blank" rel="noopener" style="color: white; text-decoration: none;"><strong>Althaf Rifath</strong></a></p>
-      </footer>
-    
+    </footer>
+    <footer class="footer2">
+        <p>&copy; 2023 Turtle Hatcheries Sri Lanka. All rights reserved. Designed and Developed by <a
+                href="https://www.linkedin.com/in/althaf-rifath/" target="_blank" rel="noopener"
+                style="color: white; text-decoration: none;"><strong>Althaf Rifath</strong></a></p>
+    </footer>
+
 </body>
+
 </html>
